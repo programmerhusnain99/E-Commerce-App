@@ -10,7 +10,7 @@ const connectDB = async () => {
     mongoose
     .connect("mongodb://127.0.0.1:27017/ecommerce-app", { useNewUrlParser: true });
   mongoose.connection.once("open", () => {
-    console.log("Database Check Once");
+    console.log("Database is connected");
   });
 };
 
