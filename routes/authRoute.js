@@ -16,9 +16,14 @@ router.post('/forget-password', forgetPasswordController);
 // Test routes
 router.get('/test', requireSignin, isAdmin, testController);
 
-//protected route auth
+//protected route user
 router.get("/user-auth", requireSignin, (req, res) => {
     res.status(200).send({ ok: true });
   });
+
+//protected Admin route auth
+router.get("/admin-auth", requireSignin, isAdmin, (req, res) => {
+  res.status(200).send({ ok: true });
+});
 
 module.exports = router;

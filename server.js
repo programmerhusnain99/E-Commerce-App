@@ -13,6 +13,7 @@ const connectDB = require('./config/db');
 connectDB();
 
 const authRoutes = require('./routes/authRoute');
+const categoryRoutes = require('./routes/categoryRoute')
 
 // middlewares
 app.use(cors());
@@ -21,6 +22,7 @@ app.use(express.json());
 
 // routes
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/category', categoryRoutes);
 
 
 // API's
